@@ -194,11 +194,11 @@ export class UsersService {
     },
   ];
 
-  getEven(): Array<Usermodel> {
+  getEven(): Array<Usermodel>{
     return this.allChars.filter(user => user.id % 2 === 0);
   }
-  
-  getOdds(): Array<Usermodel> {
+
+  getOdds(): Array<Usermodel>{
     return this.allChars.filter(user => user.id % 2 !== 0);
   }
 
