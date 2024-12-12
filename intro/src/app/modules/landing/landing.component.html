@@ -1,1 +1,24 @@
-<p>landing works!</p>
+<div class="text-center container">
+    <table class="mt-5 table">
+    <thead>
+    <tr>
+    <th class="p-5">#</th>
+    <th class="p-5">First Name</th>
+    <th class="p-5">Last Name</th>
+    <th class="p-5">Email</th>
+    <th class="p-5">Expiration Date</th>
+    <th class="p-5">Salary</th>
+    <th class="p-5">Action</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    
+    <tr *ngFor="let user of userList; index as i" [ngClass]="{'table-success': i % 2 === 1}">
+    <th class="p-2">{{user.id }}</th>
+    <td class="p-2">{{user.firstName }}</td>
+    </tr>
+    
+    </tbody>
+    </table>
+    </div>
