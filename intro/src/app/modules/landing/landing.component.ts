@@ -35,5 +35,15 @@ export class LandingComponent implements OnInit {
     window.location.reload();
   }
 
+  deleteUser(user: Usermodel): void{
+    user.deletedUser = true;
+    if(confirm(`Are you sure you want to delete ${user.id} user?`)){
+      alert('User deleted');
+    }
+    else{
+      user.deletedUser = false;
+    }
+  }
+
 }
 
