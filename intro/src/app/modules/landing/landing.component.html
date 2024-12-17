@@ -1,4 +1,4 @@
-< class="text-center container">
+<div class="text-center container">
     <table class="mt-5 table">
         <thead>
             <tr>
@@ -12,13 +12,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of userList; index ans i" [ngClass]="{'table-success' : i % 2 === 1}">
+            <tr *ngFor="let user of userList; index as i" [ngClass]="{'table-success' : i % 2 === 1}">
                 <th class="p-2">{{ user.id }}</th>
-                <td class="p-2">{{ user.firstName }}</td>
-                <td class="p-2">{{ user.lastName }}</td>
-                <td class="p-2">{{ user.email }}</td>
-                <td class="p-2">{{ user.expDate }}</td>
-                <td class="p-2">{{ user.salary }}</td>
+                <td class="p-2">{{ user.firstName | titlecase}}</td>
+                <td class="p-2">{{ user.lastName | slice:0:2 | uppercase}}</td>
+                <td class="p-2">{{ user.email | lowercase}}</td>
+                <td class="p-2">{{ user.expDate | date:"yyyy MMMM dd"}}</td>
+                <td class="p-2">{{ user.salary | currency:"Ft"}}</td>
                 <td class="p-2">Delete</td>
             </tr>
 
@@ -27,7 +27,7 @@
 
     <div class="container text-center d-flex justify-content-around my-4">
         <button (click)="getOdds()">Get odd users</button>
-        <button>Reset Table</button>
+        <button (click)="resetTable()">Reset Table</button>
         <button (click)="getEven()">Get even users</button>
     </div>
 </div>
