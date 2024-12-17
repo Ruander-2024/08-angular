@@ -1,0 +1,19 @@
+<app-menu></app-menu>
+
+<main class="card-list">
+  <app-card></app-card>
+  <app-card></app-card>
+  <app-card></app-card>
+</main>
+
+<div style="text-align: center; margin-top: 2rem;">
+
+  <div *ngIf="!users else userData">
+    Loading...
+  </div>
+
+  <ng-template #userData>
+
+  </ng-template>
+
+</div>

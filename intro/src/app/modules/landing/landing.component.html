@@ -15,11 +15,24 @@
         <tbody>
 
             <tr *ngFor="let user of userList; index as i" [ngClass]="{'table-success': i % 2 === 1}">
-                <th class="p-2">{{ user.id }}</th>
-                <td class="p-2">{{ user.firstName }}</td>
+                <ng-container *ngIf="user.deletedUser === false">
+                    <th class="p-2">{{ user.id }}</th>
+                    <td class="p-2">{{ user.firstName | titlecase }}</td>
+                    <td class="p-2">{{ user.lastName | slice:0:2 | uppercase }}</td>
+                    <td class="p-2">{{ user.email | lowercase }}</td>
+                    <td class="p-2">{{ user.expDate | date:"yyyy MMM dd" }}</td>
+                    <td class="p-2">{{ user.salary | currency:"EUR":'symbol':'1.0-0'}}</td>
+                    <td class="p-2"><button (click)="deleteUser(user)" class="btn btn-danger">Delete</button></td>
+                </ng-container>
             </tr>
 
         </tbody>
 
     </table>
+
+    <div class="container text-center d-flex justify-content-around my-4">
+        <button (click)="getOdds()">Get odd users</button>
+        <button (click)="resetTable()">Reset table</button>
+        <button (click)="getEven()">Get even users</button>
+    </div>
 </div>
