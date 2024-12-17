@@ -34,6 +34,16 @@ export class LandingComponent implements OnInit {
     alert('Your table is refreshed!');
   }
 
+  deleteUser(user: Usermodel): void{
+    user.deletedUser= true; 
+    if(confirm(`Are you sure you want to delete ${user.id} user?`)){
+      
+    }
+    else{
+      user.deletedUser = false;
+    }
+  }
+
 }
   
 
