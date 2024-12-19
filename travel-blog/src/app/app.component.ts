@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
   textColor: string = 'red';
 
   ngOnInit(): void {
-    setTimeout(() => {
+    
     this.users = [{
       name: 'John Doe',
       age: 19,
@@ -43,7 +43,6 @@ export class AppComponent implements OnInit{
       age: 27,
       isActive: false
     }]
-  }, 2500)
+  }
 }
 
-}
