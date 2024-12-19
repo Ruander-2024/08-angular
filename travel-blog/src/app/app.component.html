@@ -13,7 +13,11 @@
   </div>
 
   <ng-template #userData>
-
+    <div *ngFor="let user of users" style="display: flex;">
+      <span [ngStyle]="{'color': textColor, 'font-size': user.age + 'px', 'font-weight': (user.age > 50) ? 'bold' : 'normal'}">{{ user.name }} </span>
+      <div>{{ user.age }} </div> 
+      <div class="circle" [ngClass]="{'active': user.isActive, 'inactive': !user.isActive}"></div> 
+    </div>
   </ng-template>
 
 </div>

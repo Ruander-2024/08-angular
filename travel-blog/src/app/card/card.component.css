@@ -1,0 +1,13 @@
+.card img{
+    width: 100%;
+}
+
+.card {
+    width: 350px;
+    box-shadow: 2px 4px 4px rgba(0, 10, 10, 0.3);
+}
+
+.card p {
+    text-align: center;
+}
+
