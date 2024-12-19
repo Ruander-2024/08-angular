@@ -8,12 +8,42 @@
 
 <div style="text-align: center; margin-top: 2rem;">
 
-  <div *ngIf="!users else userData">
+  <!-- <div *ngIf="!users else userData">
     Loading...
   </div>
 
   <ng-template #userData>
+    <div *ngFor="let user of users" style="display: flex;">
+      <span [ngStyle]="{'color': textColor, 'font-size': user.age + 'px', 'font-weight': (user.age > 50) ? 'bold' : 'normal'}">{{ user.name }} </span>
+      <div>{{ user.age }} </div> 
+      <div class="circle" [ngClass]="{'active': user.isActive, 'inactive': !user.isActive}"></div> 
+    </div>
+  </ng-template> -->
 
-  </ng-template>
+  <!-- <ng-container>
+    <div *ngFor="let user of users" style="display: flex;">
+      <span [ngStyle]="{'color': textColor, 'font-size': user.age + 'px', 'font-weight': (user.age > 50) ? 'bold' : 'normal'}">{{ user.name }} </span>
+      <div>{{ user.age }} </div> 
+      <div class="circle" [ngClass]="{'active': user.isActive, 'inactive': !user.isActive}"></div> 
+    </div>
+  </ng-container> -->
+
+  <!-- <p *ngFor="let number of numbers;
+    let i = index;
+    let first = first;
+    let last = last;
+    let odd = odd;
+    let even = even;
+  ">{{ i }}#: {{ number }} {{ even }}</p> -->
+
+  <div *ngFor="let user of users; let last = last">
+    <p>
+      {{ user.name }}
+      <span *ngIf="user.isActive">(Belépve)</span>
+    </p>
+    <span>{{ user.age }}</span>
+    <span *ngIf="user.age % 2 === 0">Páros</span>
+    <span *ngIf="last">Vége</span>
+  </div>
 
 </div>
