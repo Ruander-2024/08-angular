@@ -9,10 +9,10 @@ import { CounterService } from '../../services/counter.service';
   styleUrl: './right-counter.component.css'
 })
 export class RightCounterComponent {
-  counter: number = 0
+  counter: number = 0;
 
   constructor(private counterService: CounterService){
-    this.counter = this.counterService.counter;
+    this.counter = this.counterService.counter;  // counter = 30
   }
 
   addOneToCounter(): void{
