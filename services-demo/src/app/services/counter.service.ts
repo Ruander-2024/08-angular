@@ -14,7 +14,9 @@ export class CounterService {
     
   }
 
-  
+  get counter(): number{
+    return this._counter;
+  }
 
 
 
