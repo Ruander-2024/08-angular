@@ -1,1 +1,27 @@
-<p>landing works!</p>
+<div class="text-center container">
+    <table class="mt-5 table">
+        <thead>
+            <tr>
+                <th class="p-5">#</th>
+                <th class="p-5">First Name</th>
+                <th class="p-5">Last Name</th>
+                <th class="p-5">Email</th>
+                <th class="p-5">Expiration Date</th>
+                <th class="p-5">Salary</th>
+                <th class="p-5">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let user of userList; index as i">
+                <th class="p-2">{{ user.id }}</th>
+                <th class="p-2">{{ user.firstName }}</th>
+                <th class="p-2">{{ user.lastName }}</th>
+                <th class="p-2">{{ user.email }}</th>
+                <th class="p-2">{{ user.expDate }}</th>
+                <th class="p-2">{{ user.salary }}</th>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

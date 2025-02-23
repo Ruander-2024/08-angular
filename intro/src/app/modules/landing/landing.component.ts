@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Usermodel } from '../../interfaces/users.model';
 import { UsersService } from '../../services/users.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
