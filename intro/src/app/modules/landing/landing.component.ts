@@ -34,4 +34,14 @@ resetTable(){
   window.location.reload();
   alert('Az oldal frissült!')
 }
+
+deleteUser(user: Usermodel): void{
+  user.deletedUser = true;
+  if(confirm('Tényleg törlöd a ${user.id} felhasználót?')){
+    alert('Felhasználó törölve!')
+  }
+  else{
+    user.deletedUser = false;
+  }
+}
 }
